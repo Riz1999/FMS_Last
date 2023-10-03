@@ -252,6 +252,7 @@ router.get("/adminSelectedFood/:userId", async (req, res) => {
     console.log('adminSelections :::'+adminSelections.length);
     const selectedFoodByDay = {};
 
+    // const new = [monday:[],]
     
     adminSelections.forEach((selection) => {
       const { selectedDay, breakfast, lunch, dinner } = selection;
@@ -260,11 +261,11 @@ router.get("/adminSelectedFood/:userId", async (req, res) => {
         selectedFoodByDay[selectedDay] = [];
       }
 
-      selectedFoodByDay[selectedDay].push({
+      selectedFoodByDay[selectedDay].push(
         breakfast,
         lunch,
         dinner,
-      });
+      );
     });
 
     console.log('selectedFoodByDay from DB :'+selectedFoodByDay.length);

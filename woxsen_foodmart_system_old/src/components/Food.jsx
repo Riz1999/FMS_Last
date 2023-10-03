@@ -7,6 +7,8 @@ const FoodComponent = () => {
   const [savedMessage, setSavedMessage] = useState("");
   const [selectedDay, setSelectedDay] = useState("monday");
   const [selectedDays, setSelectedDays] = useState([]);
+  const [AdminSelections, setAdminSelections] = useState([]);
+
   const [submitted, setSubmitted] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState("breakfast");
   const [selectedDate, setSelectedDate] = useState(null);
@@ -138,6 +140,310 @@ const FoodComponent = () => {
     setSubmitted(true);
     
   };
+
+  const getMealDescription = () => {
+    const mealDescriptions = {
+      monday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+      tuesday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+      wednesday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+      thursday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+               
+              ],
+            },
+          ],
+        },
+      },
+      friday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+      saturday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+      sunday: {
+        breakfast: {
+          description:
+            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
+
+          meals: [
+            // breakfast options...
+            {
+              name: "Breakfast Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+        lunch: {
+          description: "Plain Rice, Chapathi, Green Salad",
+          meals: [
+            {
+              name: "Lunch Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+
+        dinner: {
+          description: "Plain Rice, Chapathi, Curd",
+          meals: [
+            {
+              name: "Dinner Varieties",
+
+              options: [
+                
+              ],
+            },
+          ],
+        },
+      },
+
+      // Add descriptions for other days...
+    };
+
+    return mealDescriptions[selectedDay][selectedMeal];
+  };
+  const mealDescription = getMealDescription();
   useEffect(() => {
     
     const today = new Date();
@@ -155,7 +461,6 @@ const FoodComponent = () => {
       console.error("User ID missing.");
       return;
     }
-    getMealsForAdminFromDB();
     axios
       .get(`http://localhost:5000/foodselection/userSelectedDays/${userId}`)
       .then((response) => {
@@ -164,740 +469,9 @@ const FoodComponent = () => {
       .catch((error) => {
         console.error("Error fetching selected days:", error);
       });
+      getMealsForAdminFromDB();
   }, []);
 
-  const getMealDescription = () => {
-    const mealDescriptions = {
-      monday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Idly/wada/Sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Corn Pulao",
-                },
-                {
-                  name: "Moong Dal",
-                },
-                {
-                  name: "Mix veg",
-                },
-                {
-                  name: "Egg Burji",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "fruit Custurd",
-                },
-                {
-                  name: "Lemon Juice",
-                },
-                {
-                  name: "Green salad",
-                },
-                {
-                  name: "yellow salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Dal Tadka",
-                },
-                {
-                  name: "Chole",
-                },
-                {
-                  name: "Gobi Mutter Dry",
-                },
-                {
-                  name: "Veg Biryani",
-                },
-                {
-                  name: "Curd",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      tuesday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Bonda/Poha/Sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Lemon Rice",
-                },
-                {
-                  name: "Dal Pakhoni",
-                },
-                {
-                  name: "Beerakaya Alu",
-                },
-                {
-                  name: "Gobi Tomato Dum",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "mal Pua",
-                },
-                {
-                  name: "Rasna",
-                },
-                {
-                  name: "Rasam",
-                },
-                {
-                  name: "Vegetable Chatney",
-                },
-                {
-                  name: "Green salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Palak Dal",
-                },
-                {
-                  name: "Veg Kofta",
-                },
-                {
-                  name: "bhendi dum fry",
-                },
-                {
-                  name: "Sabudana Kichidi",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      wednesday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "utapam/sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Bagara Rice",
-                },
-                {
-                  name: "Methi dal",
-                },
-                {
-                  name: "Paneer Butter Masala",
-                },
-                {
-                  name: "Achari chicken",
-                },
-                {
-                  name: "Masala Roti",
-                },
-                {
-                  name: "suji Ka Halwa",
-                },
-                {
-                  name: "Butter Milk",
-                },
-
-                {
-                  name: "Green Salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Tomato Dal",
-                },
-                {
-                  name: "mashroom Capsicum",
-                },
-                {
-                  name: "Crispy Veg",
-                },
-                {
-                  name: "Tomato Onion Curry",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      thursday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Puri/Sushila/Sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Veg Pulao",
-                },
-                {
-                  name: "Kadi Pakoda",
-                },
-                {
-                  name: "jeera Alu",
-                },
-                {
-                  name: "Rajma Masala",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Besan Barfi",
-                },
-                {
-                  name: "Mango Juice",
-                },
-                {
-                  name: "Dal thadka",
-                },
-                {
-                  name: "Vegetable Chatney",
-                },
-                {
-                  name: "Green salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Masoor Dal",
-                },
-                {
-                  name: "Noodles",
-                },
-                {
-                  name: "fried Rice",
-                },
-                {
-                  name: "egg Fried rice",
-                },
-                {
-                  name: "Curd Rice",
-                },
-                {
-                  name: "Chiily Gobi",
-                },
-                {
-                  name: "Curd",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      friday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Idly/wada/sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Chicken Biryani",
-                },
-                {
-                  name: "Veg Biryani",
-                },
-                {
-                  name: "Rhaita",
-                },
-                {
-                  name: "Mirchi ka Salan",
-                },
-                {
-                  name: "Sahi Turka",
-                },
-                {
-                  name: "Rooh afza",
-                },
-                {
-                  name: "Curd rice Or Dal kichidi",
-                },
-                {
-                  name: "Green salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Dal Lasoni",
-                },
-                {
-                  name: "Palak Paneer",
-                },
-                {
-                  name: "Mirchi Bhajji",
-                },
-                {
-                  name: "Alu tomato curry",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Curd",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      saturday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Dosa/Sprouts",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Besi bole Baat",
-                },
-                {
-                  name: "Green moong dal",
-                },
-                {
-                  name: "Gobi Matter",
-                },
-                {
-                  name: "Bendi Tomato",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Bondi Ladduu",
-                },
-                {
-                  name: "Lemon Juice",
-                },
-                {
-                  name: "Vegetable Chatney",
-                },
-                {
-                  name: "Green Salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Methi Dal",
-                },
-                {
-                  name: "Alu dum",
-                },
-                {
-                  name: "Eggs Burji",
-                },
-                {
-                  name: "Chapathi",
-                },
-                {
-                  name: "Veg Soup",
-                },
-                {
-                  name: "Curd",
-                },
-                {
-                  name: "water Melon",
-                },
-              ],
-            },
-          ],
-        },
-      },
-      sunday: {
-        breakfast: {
-          description:
-            "Boiled Eggs & Omelette,Bread/Jam/Butter,Tea/Coffee/Milk",
-
-          meals: [
-            // breakfast options...
-            {
-              name: "Breakfast Varieties",
-
-              options: [
-                {
-                  name: "Boiled Eggs&Omelette",
-                },
-                {
-                  name: "Bread/Jam/Butter/corn Flacks",
-                },
-                {
-                  name: "Alu Paratha",
-                },
-                {
-                  name: "Tea/Coffee/Milk/Black tea",
-                },
-              ],
-            },
-          ],
-        },
-        lunch: {
-          description: "Plain Rice, Chapathi, Green Salad",
-          meals: [
-            {
-              name: "Lunch Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Zeera Rice",
-                },
-                {
-                  name: "Dlacha",
-                },
-                {
-                  name: "Rogani Chicken",
-                },
-                {
-                  name: "Paneer Kurchan",
-                },
-                {
-                  name: "Butter Naan",
-                },
-                {
-                  name: "Butter Milk",
-                },
-                {
-                  name: "Rice Kheer",
-                },
-                {
-                  name: "Green Salad",
-                },
-              ],
-            },
-          ],
-        },
-
-        dinner: {
-          description: "Plain Rice, Chapathi, Curd",
-          meals: [
-            {
-              name: "Dinner Varieties",
-
-              options: [
-                {
-                  name: "Plain Rice",
-                },
-                {
-                  name: "Dal",
-                },
-                {
-                  name: "Chole bhatora",
-                },
-                {
-                  name: "Manchurian wet",
-                },
-                {
-                  name: "maggi or kichidi Katta",
-                },
-                {
-                  name: "Soup Veg/Non veg",
-                },
-                {
-                  name: "Banana",
-                },
-              ],
-            },
-          ],
-        },
-      },
-
-      // Add descriptions for other days...
-    };
-
-    return mealDescriptions[selectedDay][selectedMeal];
-  };
 
   const getMealsForAdminFromDB=()=>{
     console.log('user id ::::'+userId);
@@ -906,15 +480,31 @@ const FoodComponent = () => {
     .then((response) => {
       debugger;
       console.log('response from DB :'+response);
-      setSelectedDays(response.data.selectedDays);
+      var New  = response.data
+      console.log(New)
+      const arr = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
+      var i = 0
+      var m = 0 
+      var n = 0
+      while(i < 7){
+        if(New[arr[i]]){
+          while(m < New[arr[i]].length){
+            while(n < New[arr[i]][m].length){
+              mealDescription.meals[0].options.push({ name: New[arr[i]][m][n] });
+              n++
+            };
+            m++
+          };
+        }
+        i++
+      }
+      console.log(mealDescription)
     })
     .catch((error) => {
       console.error("Error fetching selected days:", error);
     });
 
-
   }
-  const mealDescription = getMealDescription();
 
   return (
     <section id="food" className="food">
