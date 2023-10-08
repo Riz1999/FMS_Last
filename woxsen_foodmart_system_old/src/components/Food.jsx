@@ -437,13 +437,11 @@ const FoodComponent = () => {
           ],
         },
       },
-
-      // Add descriptions for other days...
     };
-
-    return mealDescriptions[selectedDay][selectedMeal];
+    return mealDescriptions;
   };
-  const mealDescription = getMealDescription();
+  const mealDes = getMealDescription();
+  const mealDescription = mealDes[selectedDay][selectedMeal]
   useEffect(() => {
     
     const today = new Date();
@@ -483,22 +481,9 @@ const FoodComponent = () => {
       var New  = response.data
       console.log(New)
       const arr = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
-      var i = 0
-      var m = 0 
-      var n = 0
-      while(i < 7){
-        if(New[arr[i]]){
-          while(m < New[arr[i]].length){
-            while(n < New[arr[i]][m].length){
-              mealDescription.meals[0].options.push({ name: New[arr[i]][m][n] });
-              n++
-            };
-            m++
-          };
-        }
-        i++
-      }
-      console.log(mealDescription)
+      const arr2 =['breakfast','lunch','dinner']
+      
+      console.log(getMealDescription)
     })
     .catch((error) => {
       console.error("Error fetching selected days:", error);

@@ -1,6 +1,7 @@
 ///////////////////////////////////////////////////
 const express = require("express");
 const router = express.Router();
+const User = require("../models/User")
 const UserFoodSelection = require("../models/FoodSelection");
 const AdminFoodSelection = require("../models/AdminFoodSelection");
 var date = new Date();
@@ -244,7 +245,8 @@ router.get("/userSelectedFood/:userId", async (req, res) => {
 router.get("/adminSelectedFood/:userId", async (req, res) => {
   try {
     debugger;
-    const userId = req.params.userId; 
+    const user = await User.findOne({ isAdmin : true})
+    const userId = user._id; 
 
     console.log('USer id :::'+userId);
     console.log('AdminFoodSelection id :::'+AdminFoodSelection);
